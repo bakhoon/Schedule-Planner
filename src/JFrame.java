@@ -113,7 +113,14 @@ public class JFrame extends javax.swing.JFrame {
         
         semesterNumbers = course.getSemester();
         arrayLast = semesterNumbers.size()-1;
-        Integer getSemesterInt = semesterNumbers.get(arrayLast);
+        Integer getSemesterInt;
+        try{
+            getSemesterInt = semesterNumbers.get(arrayLast);
+        }
+        catch(Exception e){
+            getSemesterInt = 0;
+        }
+        
         ArrayList<ArrayList> semesterGetTable = new ArrayList<ArrayList>();
         semesterGetTable = course.semesterTable(getSemesterInt);
         
